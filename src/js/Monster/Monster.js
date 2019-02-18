@@ -5,7 +5,7 @@ class Monster extends Actor {
   strength;
 
   constructor(name, hp, strength) {
-    super(name, hp);
+    super(name, hp, strength);
 
     this.strength = strength;
   }
