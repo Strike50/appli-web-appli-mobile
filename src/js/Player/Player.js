@@ -1,12 +1,21 @@
 import Actor from "../Actor/Actor.js";
 
 class Player extends Actor {
+  xp;
+  items;
 
-  love;
+  constructor(name, hp, love, xp) {
+    super(name, hp, love);
 
-  constructor(name, hp, love) {
-    super(name, hp);
-
-    this.love = love;
+    this.xp = xp;
   }
+
+  addItem(item) {
+    this.items.push(item);
+  }
+
+  removeItem(itemIndex) {
+    this.items.remove(itemIndex);
+  }
+
 }
