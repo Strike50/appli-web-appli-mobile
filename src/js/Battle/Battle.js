@@ -13,7 +13,6 @@ class Battle {
   }
 
   startFight(players, monster){
-    startFight(players, monster){
       if(this.comparePosition() == true){
         while(monster.hp > 0){
           players.forEach(player => {
@@ -25,8 +24,6 @@ class Battle {
         }
         }
       }    
-    }
-  }
   }
 }
 
