@@ -5,7 +5,7 @@ class Monster extends Actor {
     super(name, hp, strength);
     this.position = new Point(this.latitude, this.longitude);
     this.apparitionFrequency = apparitionFrequency;
-	this.xp = xp;
+    this.xp = xp;
   }
 }
 

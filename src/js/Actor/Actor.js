@@ -6,11 +6,16 @@ class Actor {
   }
 
   fight(target){
-    target.hp = target.hp - this.damage;
+    const remainingLife = target.hp - this.damage;
+    if(remainingLife < 0){
+      target.hp = 0;
+    }else{
+      target.hp = remainingLife;
+    }
   }
 
   toString(){
-    return this.name + ' possède ' + this.hp + ' points de vies et '+ this.damage + ' points d\'attaque.';
+    return this.name + ' possède ' + this.hp + ' points de vies et ' + this.damage + ' points d\'attaque.';
   }
 }
 

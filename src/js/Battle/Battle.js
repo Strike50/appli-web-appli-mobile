@@ -12,15 +12,20 @@ class Battle {
     return Math.floor(Math.random() * Math.floor(max));
   }
 
-  startFight(players, monster) {
+  startFight() {
     if (this.comparePosition() === true) {
-      while (monster.hp > 0) {
-        players.forEach(player => {
-          player.fight(monster);
+      let isMonsterDead = false;
+      while (this.monster.hp > 0) {
+        this.players.forEach(player => {
+          player.fight(this.monster);
+          console.log(this.monster.toString());
         });
-        const playerSelected = this.getRandomInt(players.length + 1);
-        if (players[playerSelected].hp > 0) {
-          monster.fight(players[playerSelected]);
+        if(this.monster.hp <= 0){
+          isMonsterDead = true;
+        }
+        const playerSelected = this.getRandomInt(this.players.length);
+        if (this.players[playerSelected].hp > 0 && !isMonsterDead) {
+          this.monster.fight(this.players[playerSelected]);
         }
       }
     }
