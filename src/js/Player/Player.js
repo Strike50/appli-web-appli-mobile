@@ -4,6 +4,7 @@ class Player extends Actor {
   constructor(name, hp, love, xp) {
     super(name, hp, love);
     this.xp = xp;
+	this.items = [];
   }
 
   addItem(item) {
