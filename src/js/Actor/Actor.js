@@ -6,7 +6,11 @@ class Actor {
   }
 
   fight(target){
+    target.hp = target.hp - this.damage;
+  }
 
+  toString(){
+    return this.name + ' possède ' + this.hp + ' points de vies et '+ this.damage + ' points d\'attaque.';
   }
 }
 
