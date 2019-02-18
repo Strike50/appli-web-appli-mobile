@@ -2,6 +2,7 @@ import Player from './Player/Player.js';
 import Monster from './Monster/Monster.js';
 import Item from './Item/Item.js';
 import Battle from './Battle/Battle.js';
+import axios from 'axios';
 
 let p = new Player('Ronan', 3, 500, 0);
 let m = new Monster('Enki', 1, 1, 0, 0, 30, 30);
@@ -15,4 +16,9 @@ let listPlayer = [p];
 let b = new Battle(listPlayer, m);
 console.log("résultat : ")
 b.startFight();
-
+axios.post('https://swordartonlinemobile-epsi.firebaseio.com/players.json', listPlayer).then(res => {
+    console.log(res);
+}).error(err => {
+    console.log(err);
+});
+;
