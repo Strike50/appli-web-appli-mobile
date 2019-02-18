@@ -6,7 +6,7 @@ class Actor {
   }
 
   fight(target){
-    target.hp -= this.damage;
+
   }
 }
 
