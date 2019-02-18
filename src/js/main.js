@@ -1,0 +1,2 @@
+new Player();
+new Monster();

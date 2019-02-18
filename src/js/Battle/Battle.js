@@ -1,7 +1,10 @@
-import Actor from '../Actor/Actor.js';
-import Item from '../Item/Item.js';
+import Player from '../Player/Player';
 
 class Battle {
+  constructor(players, monster){
+    this.players=players;
+    this.monster=monster;
+  }
 
   comparePosition(){
     return true;
@@ -32,3 +35,4 @@ class Battle {
   }
 }
 
+export default Battle;
