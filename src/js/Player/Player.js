@@ -1,12 +1,8 @@
-import Actor from "../Actor/Actor.js";
+import Actor from '../Actor/Actor.js';
 
 class Player extends Actor {
-  xp;
-  items;
-
   constructor(name, hp, love, xp) {
     super(name, hp, love);
-
     this.xp = xp;
   }
 
@@ -19,3 +15,5 @@ class Player extends Actor {
   }
 
 }
+
+export default Player;
