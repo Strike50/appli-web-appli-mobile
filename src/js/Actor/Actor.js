@@ -1,8 +1,9 @@
 class Actor {
-  constructor(name, hp, damage){
+  constructor(name, hp, damage, picture){
     this.name = name;
     this.hp = hp;
     this.damage = damage;
+    this.picture = picture;
   }
 
   fight(target){

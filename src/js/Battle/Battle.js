@@ -1,3 +1,4 @@
+import $ from 'jquery';
 class Battle {
   constructor(players, monster) {
     this.players = players;
@@ -15,21 +16,41 @@ class Battle {
   startFight() {
     if (this.comparePosition() === true) {
       let isMonsterDead = false;
-      while (this.monster.hp > 0) {
-        this.players.forEach(player => {
-          player.fight(this.monster);
-          console.log(this.monster.toString());
-        });
+      let isPlayerDead = false;
+      while (isMonsterDead === false && isPlayerDead === false) {
+        const playerSelected = this.getRandomInt(this.players.length);
+
+        if(this.players[playerSelected].hp <= 0){
+          isPlayerDead = true;
+       }
+       
+        if (this.players[playerSelected].hp > 0 && !isMonsterDead) {
+          this.players[playerSelected].fight(this.monster);
+          $("#ennemy").after("<li>"+this.monster.toString()+"</li>")
+        }
+        
         if(this.monster.hp <= 0){
           isMonsterDead = true;
         }
-        const playerSelected = this.getRandomInt(this.players.length);
+        
         if (this.players[playerSelected].hp > 0 && !isMonsterDead) {
           this.monster.fight(this.players[playerSelected]);
+          $("#player"+playerSelected).after("<li>"+this.players[playerSelected].toString()+"</li>")
         }
+      }
+
+    }
+  }
+
+  sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+      if ((new Date().getTime() - start) > milliseconds){
+        break;
       }
     }
   }
+
 }
 
 
