@@ -112,9 +112,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/js/Actor/Actor.js" />
-      </list>
-    </option>
-  </component>
         <option value="$PROJECT_DIR$/src/js/Monster.js" />
         <option value="$PROJECT_DIR$/src/js/Player.js" />
         <option value="$PROJECT_DIR$/src/js/Player/Player.js" />
